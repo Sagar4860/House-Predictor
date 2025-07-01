@@ -34,10 +34,10 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- Load Data ---
-location_df = pickle.load(open('C:/Users/LENOVO/Desktop/house prediction/real-estate-app/datasets/location_df.pkl', 'rb'))
-cosine_sim1 = pickle.load(open('C:/Users/LENOVO/Desktop/house prediction/real-estate-app/datasets/cosine_sim1.pkl', 'rb'))
-cosine_sim2 = pickle.load(open('C:/Users/LENOVO/Desktop/house prediction/real-estate-app/datasets/cosine_sim2.pkl', 'rb'))
-cosine_sim3 = pickle.load(open('C:/Users/LENOVO/Desktop/house prediction/real-estate-app/datasets/cosine_sim3.pkl', 'rb'))
+location_df = pickle.load(open('datasets/location_df.pkl', 'rb'))
+cosine_sim1 = pickle.load(open('datasets/cosine_sim1.pkl', 'rb'))
+cosine_sim2 = pickle.load(open('datasets/cosine_sim2.pkl', 'rb'))
+cosine_sim3 = pickle.load(open('datasets/cosine_sim3.pkl', 'rb'))
 
 # --- Recommendation Function ---
 def recommend_properties_with_scores(property_name, top_n=5):

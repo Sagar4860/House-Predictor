@@ -58,8 +58,8 @@ st.markdown("<h1 style='text-align: center;'>🏡 Real Estate Data Dashboard</h1
 st.title('Analytics')
 
 # Load and preprocess
-df = pd.read_csv('C:/Users/LENOVO/Desktop/house prediction/real-estate-app/datasets/data_viz1.csv')
-feature_text = pickle.load(open('C:/Users/LENOVO/Desktop/house prediction/real-estate-app/datasets/feature_text.pkl', 'rb'))
+df = pd.read_csv('datasets/data_viz1.csv')
+feature_text = pickle.load(open('datasets/feature_text.pkl', 'rb'))
 
 numeric_cols = ['price', 'price_per_sqft', 'built_up_area', 'latitude', 'longitude']
 df[numeric_cols] = df[numeric_cols].apply(pd.to_numeric, errors='coerce')
