@@ -34,10 +34,24 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- Load Data ---
-location_df = pickle.load(open('..datasets/location_df.pkl', 'rb'))
-cosine_sim1 = pickle.load(open('..datasets/cosine_sim1.pkl', 'rb'))
-cosine_sim2 = pickle.load(open('..datasets/cosine_sim2.pkl', 'rb'))
-cosine_sim3 = pickle.load(open('..datasets/cosine_sim3.pkl', 'rb'))
+import os
+import pickle
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(BASE_DIR, '..', 'datasets')
+
+with open(os.path.join(DATA_DIR, 'location_df.pkl'), 'rb') as f:
+    location_df = pickle.load(f)
+
+with open(os.path.join(DATA_DIR, 'cosine_sim1.pkl'), 'rb') as f:
+    cosine_sim1 = pickle.load(f)
+
+with open(os.path.join(DATA_DIR, 'cosine_sim2.pkl'), 'rb') as f:
+    cosine_sim2 = pickle.load(f)
+
+with open(os.path.join(DATA_DIR, 'cosine_sim3.pkl'), 'rb') as f:
+    cosine_sim3 = pickle.load(f)
+
 
 # --- Recommendation Function ---
 def recommend_properties_with_scores(property_name, top_n=5):

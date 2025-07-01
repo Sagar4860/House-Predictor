@@ -58,8 +58,18 @@ st.markdown("<h1 style='text-align: center;'>🏡 Real Estate Data Dashboard</h1
 st.title('Analytics')
 
 # Load and preprocess
-df = pd.read_csv('..datasets/data_viz1.csv')
-feature_text = pickle.load(open('..datasets/feature_text.pkl', 'rb'))
+import os
+import pandas as pd
+import pickle
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(BASE_DIR, '..', 'datasets')
+
+df = pd.read_csv(os.path.join(DATA_DIR, 'data_viz1.csv'))
+
+with open(os.path.join(DATA_DIR, 'feature_text.pkl'), 'rb') as f:
+    feature_text = pickle.load(f)
+
 
 numeric_cols = ['price', 'price_per_sqft', 'built_up_area', 'latitude', 'longitude']
 df[numeric_cols] = df[numeric_cols].apply(pd.to_numeric, errors='coerce')
