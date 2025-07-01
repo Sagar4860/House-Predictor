@@ -44,10 +44,10 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- Load Data ---
-with open('datasets/df.pkl','rb') as file:
+with open('..datasets/df.pkl','rb') as file:
     df = pickle.load(file)
 
-with open('datasets/pipeline.pkl','rb') as file:
+with open('..datasets/pipeline.pkl','rb') as file:
     pipeline = pickle.load(file)
 
 # --- Header ---
