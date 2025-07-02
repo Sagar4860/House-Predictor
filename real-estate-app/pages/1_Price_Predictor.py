@@ -46,10 +46,18 @@ st.markdown("""
 # import pickle
 
 # --- Load Data ---
-with open('../datasets/df.pkl', 'rb') as file:
+import os
+import pickle
+
+# Define base and dataset paths
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(BASE_DIR, '..', 'datasets')
+
+# Load data using full path
+with open(os.path.join(DATA_DIR, 'df.pkl'), 'rb') as file:
     df = pickle.load(file)
 
-with open('../datasets/pipeline.pkl', 'rb') as file:
+with open(os.path.join(DATA_DIR, 'pipeline.pkl'), 'rb') as file:
     pipeline = pickle.load(file)
 
 # --- Header ---
@@ -97,5 +105,3 @@ if submitted:
         st.success(f"💰 The estimated price range is between **₹{low} Cr** and **₹{high} Cr**")
     except Exception as e:
         st.error(f"⚠️ Prediction failed: {e}")
-
-
