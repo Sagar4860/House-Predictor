@@ -44,6 +44,15 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # import pickle
+from huggingface_hub import hf_hub_download
+import pickle
+
+# Download the model file from Hugging Face
+model_path = hf_hub_download(repo_id="sagar4860/house-prediction", filename="pipeline.pkl")
+
+# Load the pickle model
+with open(model_path, "rb") as f:
+    pipeline = pickle.load(f)
 
 # --- Load Data ---
 import os
@@ -56,9 +65,6 @@ DATA_DIR = os.path.join(BASE_DIR, '..', 'datasets')
 # Load data using full path
 with open(os.path.join(DATA_DIR, 'df.pkl'), 'rb') as file:
     df = pickle.load(file)
-
-with open(os.path.join(DATA_DIR, 'pipeline.pkl'), 'rb') as file:
-    pipeline = pickle.load(file)
 
 # --- Header ---
 st.markdown("## 🏡 Real Estate Price Estimator")

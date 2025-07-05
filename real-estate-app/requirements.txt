@@ -7,3 +7,4 @@ seaborn==0.13.2
 plotly==5.20.0
 streamlit==1.46.1
 wordcloud==1.9.4
+huggingface-hub==0.33.2
