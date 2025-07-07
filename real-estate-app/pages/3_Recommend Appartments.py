@@ -75,7 +75,7 @@ with st.form("search_form"):
     with col1:
         selected_location = st.selectbox("Select a location", sorted(location_df.columns.to_list()))
     with col2:
-        radius = st.number_input("Radius (in Kms)", min_value=1.0, max_value=50.0, value=5.0)
+        radius = st.number_input("Radius (in Kms)", min_value=1.0, max_value=500.0, value=5.0)
 
     search = st.form_submit_button("🔍 Search Nearby")
 
